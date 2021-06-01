@@ -62,5 +62,5 @@ return Bluebird.try(() => ig.account.login(username, password)).catch(
         "IgResponseError": '[429] Слишком много запросов, или прокси не валидный',
         "RequestError": "Не валидный прокси"
     }
-    return parentPort.postMessage({success: true, error: custom_errors[e.name] ? custom_errors[e.name] : e.message})
+    return parentPort.postMessage({success: false, error: custom_errors[e.name] ? custom_errors[e.name] : e.message})
 });
